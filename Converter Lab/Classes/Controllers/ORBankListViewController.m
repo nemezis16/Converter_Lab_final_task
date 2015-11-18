@@ -70,7 +70,7 @@
 
 -(void)actionSearch:(id)sender{
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.9 animations:^{
         [self.tableView setTableHeaderView:self.searchController.searchBar];
         [self.searchController.searchBar becomeFirstResponder];
     }completion:^(BOOL finished){
@@ -82,7 +82,7 @@
 -(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
     
     [self performFetch];
-    [UIView animateWithDuration:0.6 animations:^{
+    [UIView animateWithDuration:0.9 animations:^{
         [self.tableView setTableHeaderView:nil];
         
     }completion:^(BOOL finished){
@@ -98,14 +98,18 @@
     
     if (dataBaseModel.managedObjectContext)
     {
-        NSString *predicateFormat = @"title CONTAINS[cd] %@";
-        NSString *searchAttribute = @"title";
         
         NSFetchRequest *fetchRequest=[[NSFetchRequest alloc]initWithEntityName:@"ORBank"];
         
         [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:predicateFormat, searchText];
+        NSPredicate *predicateTitle = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchText];
+        NSPredicate *predicateCity = [NSPredicate predicateWithFormat:@"city CONTAINS[cd] %@", searchText];
+        NSPredicate *predicateAddres = [NSPredicate predicateWithFormat:@"address CONTAINS[cd] %@", searchText];
+        NSPredicate *predicateRegion = [NSPredicate predicateWithFormat:@"region CONTAINS[cd] %@", searchText];
+        
+        NSPredicate *predicate =[NSCompoundPredicate orPredicateWithSubpredicates:@[predicateTitle,predicateRegion,predicateCity,predicateAddres]];
+        
         [self.searchFetchRequest setPredicate:predicate];
         
         NSError *error = nil;
