@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5D08DE121BF9F6D100AD5503 /* ORBankDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE111BF9F6D100AD5503 /* ORBankDetailViewController.m */; };
+		5D08DE1B1BFA1D0400AD5503 /* ORBankDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE1A1BFA1D0400AD5503 /* ORBankDescriptionCell.m */; };
+		5D08DE1E1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE1D1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m */; };
+		5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE201BFA1D4500AD5503 /* ORCurrencyListCell.m */; };
+		5D8459D81BF5E36900987B63 /* ORBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459D71BF5E36900987B63 /* ORBank.m */; };
+		5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E21BF5F17400987B63 /* ORDataManager.m */; };
+		5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E51BF5F19200987B63 /* ORDataBuilder.m */; };
+		5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D897F281BF9C48800E30C47 /* ORBankListCell.m */; };
+		5D8A56EF1BF7D1ED00E8BDDC /* ORCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */; };
+		5DF019D61BF4927E008D371E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D51BF4927E008D371E /* Foundation.framework */; };
+		5DF019D81BF4927E008D371E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D71BF4927E008D371E /* CoreGraphics.framework */; };
+		5DF019DA1BF4927E008D371E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D91BF4927E008D371E /* UIKit.framework */; };
+		5DF019E01BF4927E008D371E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019DE1BF4927E008D371E /* InfoPlist.strings */; };
+		5DF019E21BF4927E008D371E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF019E11BF4927E008D371E /* main.m */; };
+		5DF019E61BF4927E008D371E /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF019E51BF4927E008D371E /* ORAppDelegate.m */; };
+		5DF019E91BF4927E008D371E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019E71BF4927E008D371E /* Main.storyboard */; };
+		5DF019EE1BF4927E008D371E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019ED1BF4927E008D371E /* Images.xcassets */; };
+		5DF019F51BF4927E008D371E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019F41BF4927E008D371E /* XCTest.framework */; };
+		5DF019F61BF4927E008D371E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D51BF4927E008D371E /* Foundation.framework */; };
+		5DF019F71BF4927E008D371E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D91BF4927E008D371E /* UIKit.framework */; };
+		5DF019FF1BF4927E008D371E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019FD1BF4927E008D371E /* InfoPlist.strings */; };
+		5DF01A011BF4927E008D371E /* Converter_LabTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF01A001BF4927E008D371E /* Converter_LabTests.m */; };
+		5DF01A0F1BF49C7A008D371E /* ORBankListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF01A0E1BF49C7A008D371E /* ORBankListViewController.m */; };
+		5DF01A141BF4A02C008D371E /* ORDataReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF01A131BF4A02C008D371E /* ORDataReciever.m */; };
+		5DF021111BF539FD008D371E /* ORDatabaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF021101BF539FD008D371E /* ORDatabaseModel.m */; };
+		5DF021141BF53AFE008D371E /* ConverterLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DF021121BF53AFE008D371E /* ConverterLab.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5DF019F81BF4927E008D371E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5DF019CA1BF4927E008D371E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DF019D11BF4927E008D371E;
+			remoteInfo = "Converter Lab";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5D08DE101BF9F6D100AD5503 /* ORBankDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankDetailViewController.h; path = Classes/Controllers/ORBankDetailViewController.h; sourceTree = "<group>"; };
+		5D08DE111BF9F6D100AD5503 /* ORBankDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankDetailViewController.m; path = Classes/Controllers/ORBankDetailViewController.m; sourceTree = "<group>"; };
+		5D08DE191BFA1D0400AD5503 /* ORBankDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankDescriptionCell.h; path = Classes/Views/ORBankDescriptionCell.h; sourceTree = "<group>"; };
+		5D08DE1A1BFA1D0400AD5503 /* ORBankDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankDescriptionCell.m; path = Classes/Views/ORBankDescriptionCell.m; sourceTree = "<group>"; };
+		5D08DE1C1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORCurrencyDescriptionCell.h; path = Classes/Views/ORCurrencyDescriptionCell.h; sourceTree = "<group>"; };
+		5D08DE1D1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrencyDescriptionCell.m; path = Classes/Views/ORCurrencyDescriptionCell.m; sourceTree = "<group>"; };
+		5D08DE1F1BFA1D4500AD5503 /* ORCurrencyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORCurrencyListCell.h; path = Classes/Views/ORCurrencyListCell.h; sourceTree = "<group>"; };
+		5D08DE201BFA1D4500AD5503 /* ORCurrencyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrencyListCell.m; path = Classes/Views/ORCurrencyListCell.m; sourceTree = "<group>"; };
+		5D8459D61BF5E36900987B63 /* ORBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBank.h; path = Classes/Models/ManagedObjectClasses/ORBank.h; sourceTree = "<group>"; };
+		5D8459D71BF5E36900987B63 /* ORBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBank.m; path = Classes/Models/ManagedObjectClasses/ORBank.m; sourceTree = "<group>"; };
+		5D8459E11BF5F17400987B63 /* ORDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataManager.h; path = Classes/Controllers/ORDataManager.h; sourceTree = "<group>"; };
+		5D8459E21BF5F17400987B63 /* ORDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDataManager.m; path = Classes/Controllers/ORDataManager.m; sourceTree = "<group>"; };
+		5D8459E41BF5F19200987B63 /* ORDataBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataBuilder.h; path = Classes/Controllers/ORDataBuilder.h; sourceTree = "<group>"; };
+		5D8459E51BF5F19200987B63 /* ORDataBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDataBuilder.m; path = Classes/Controllers/ORDataBuilder.m; sourceTree = "<group>"; };
+		5D8854DC1BF690AC0086BC44 /* ORDataRecieverDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataRecieverDelegate.h; path = Classes/Controllers/ORDataRecieverDelegate.h; sourceTree = "<group>"; };
+		5D8854DD1BF691190086BC44 /* ORDataManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataManagerDelegate.h; path = Classes/Controllers/ORDataManagerDelegate.h; sourceTree = "<group>"; };
+		5D897F271BF9C48800E30C47 /* ORBankListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankListCell.h; path = Classes/Views/ORBankListCell.h; sourceTree = "<group>"; };
+		5D897F281BF9C48800E30C47 /* ORBankListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankListCell.m; path = Classes/Views/ORBankListCell.m; sourceTree = "<group>"; };
+		5D8A56ED1BF7D1ED00E8BDDC /* ORCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORCurrency.h; path = Classes/Models/ManagedObjectClasses/ORCurrency.h; sourceTree = "<group>"; };
+		5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrency.m; path = Classes/Models/ManagedObjectClasses/ORCurrency.m; sourceTree = "<group>"; };
+		5DF019D21BF4927E008D371E /* Converter Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Converter Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF019D51BF4927E008D371E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5DF019D71BF4927E008D371E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5DF019D91BF4927E008D371E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5DF019DD1BF4927E008D371E /* Converter Lab-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Converter Lab-Info.plist"; sourceTree = "<group>"; };
+		5DF019DF1BF4927E008D371E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DF019E11BF4927E008D371E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5DF019E31BF4927E008D371E /* Converter Lab-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Converter Lab-Prefix.pch"; sourceTree = "<group>"; };
+		5DF019E41BF4927E008D371E /* ORAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ORAppDelegate.h; path = Classes/AppDelegate/ORAppDelegate.h; sourceTree = "<group>"; };
+		5DF019E51BF4927E008D371E /* ORAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ORAppDelegate.m; path = Classes/AppDelegate/ORAppDelegate.m; sourceTree = "<group>"; };
+		5DF019E81BF4927E008D371E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5DF019ED1BF4927E008D371E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5DF019F31BF4927E008D371E /* Converter LabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Converter LabTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF019F41BF4927E008D371E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5DF019FC1BF4927E008D371E /* Converter LabTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Converter LabTests-Info.plist"; sourceTree = "<group>"; };
+		5DF019FE1BF4927E008D371E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5DF01A001BF4927E008D371E /* Converter_LabTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Converter_LabTests.m; sourceTree = "<group>"; };
+		5DF01A0D1BF49C7A008D371E /* ORBankListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankListViewController.h; path = Classes/Controllers/ORBankListViewController.h; sourceTree = "<group>"; };
+		5DF01A0E1BF49C7A008D371E /* ORBankListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankListViewController.m; path = Classes/Controllers/ORBankListViewController.m; sourceTree = "<group>"; };
+		5DF01A121BF4A02C008D371E /* ORDataReciever.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataReciever.h; path = Classes/Controllers/ORDataReciever.h; sourceTree = "<group>"; };
+		5DF01A131BF4A02C008D371E /* ORDataReciever.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDataReciever.m; path = Classes/Controllers/ORDataReciever.m; sourceTree = "<group>"; };
+		5DF0210F1BF539FD008D371E /* ORDatabaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDatabaseModel.h; path = Classes/Models/DatabaseModel/ORDatabaseModel.h; sourceTree = "<group>"; };
+		5DF021101BF539FD008D371E /* ORDatabaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORDatabaseModel.m; path = Classes/Models/DatabaseModel/ORDatabaseModel.m; sourceTree = "<group>"; };
+		5DF021131BF53AFE008D371E /* ConverterLab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConverterLab.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5DF019CF1BF4927E008D371E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF019D81BF4927E008D371E /* CoreGraphics.framework in Frameworks */,
+				5DF019DA1BF4927E008D371E /* UIKit.framework in Frameworks */,
+				5DF019D61BF4927E008D371E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF019F01BF4927E008D371E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF019F51BF4927E008D371E /* XCTest.framework in Frameworks */,
+				5DF019F71BF4927E008D371E /* UIKit.framework in Frameworks */,
+				5DF019F61BF4927E008D371E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5D08DE0B1BF9F65700AD5503 /* BankListCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D897F271BF9C48800E30C47 /* ORBankListCell.h */,
+				5D897F281BF9C48800E30C47 /* ORBankListCell.m */,
+			);
+			name = BankListCell;
+			sourceTree = "<group>";
+		};
+		5D08DE0C1BF9F66B00AD5503 /* BankDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE101BF9F6D100AD5503 /* ORBankDetailViewController.h */,
+				5D08DE111BF9F6D100AD5503 /* ORBankDetailViewController.m */,
+			);
+			name = BankDetailViewController;
+			sourceTree = "<group>";
+		};
+		5D08DE161BFA1C8D00AD5503 /* BankDescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE191BFA1D0400AD5503 /* ORBankDescriptionCell.h */,
+				5D08DE1A1BFA1D0400AD5503 /* ORBankDescriptionCell.m */,
+			);
+			name = BankDescriptionCell;
+			sourceTree = "<group>";
+		};
+		5D08DE171BFA1CA300AD5503 /* CurrencyDescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE1C1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.h */,
+				5D08DE1D1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m */,
+			);
+			name = CurrencyDescriptionCell;
+			sourceTree = "<group>";
+		};
+		5D08DE181BFA1CBC00AD5503 /* CurrencyListCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE1F1BFA1D4500AD5503 /* ORCurrencyListCell.h */,
+				5D08DE201BFA1D4500AD5503 /* ORCurrencyListCell.m */,
+			);
+			name = CurrencyListCell;
+			sourceTree = "<group>";
+		};
+		5D8459E01BF5E42C00987B63 /* Currency */ = {
+			isa = PBXGroup;
+			children = (
+				5D8A56ED1BF7D1ED00E8BDDC /* ORCurrency.h */,
+				5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */,
+			);
+			name = Currency;
+			sourceTree = "<group>";
+		};
+		5D8459E71BF5F1A200987B63 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5D8854DD1BF691190086BC44 /* ORDataManagerDelegate.h */,
+				5D8459E11BF5F17400987B63 /* ORDataManager.h */,
+				5D8459E21BF5F17400987B63 /* ORDataManager.m */,
+			);
+			name = DataManager;
+			sourceTree = "<group>";
+		};
+		5D8459E81BF5F1AC00987B63 /* DataBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				5D8459E41BF5F19200987B63 /* ORDataBuilder.h */,
+				5D8459E51BF5F19200987B63 /* ORDataBuilder.m */,
+			);
+			name = DataBuilder;
+			sourceTree = "<group>";
+		};
+		5D897F261BF9C37B00E30C47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE181BFA1CBC00AD5503 /* CurrencyListCell */,
+				5D08DE171BFA1CA300AD5503 /* CurrencyDescriptionCell */,
+				5D08DE161BFA1C8D00AD5503 /* BankDescriptionCell */,
+				5D08DE0B1BF9F65700AD5503 /* BankListCell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		5DF019C91BF4927E008D371E = {
+			isa = PBXGroup;
+			children = (
+				5DF019DB1BF4927E008D371E /* Converter Lab */,
+				5DF019FA1BF4927E008D371E /* Converter LabTests */,
+				5DF019D41BF4927E008D371E /* Frameworks */,
+				5DF019D31BF4927E008D371E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5DF019D31BF4927E008D371E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5DF019D21BF4927E008D371E /* Converter Lab.app */,
+				5DF019F31BF4927E008D371E /* Converter LabTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5DF019D41BF4927E008D371E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DF019D51BF4927E008D371E /* Foundation.framework */,
+				5DF019D71BF4927E008D371E /* CoreGraphics.framework */,
+				5DF019D91BF4927E008D371E /* UIKit.framework */,
+				5DF019F41BF4927E008D371E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5DF019DB1BF4927E008D371E /* Converter Lab */ = {
+			isa = PBXGroup;
+			children = (
+				5D897F261BF9C37B00E30C47 /* Views */,
+				5DF01A0A1BF4929A008D371E /* AppDelegate */,
+				5DF01A101BF49D8C008D371E /* Models */,
+				5DF01A0B1BF492A2008D371E /* Controllers */,
+				5DF019E71BF4927E008D371E /* Main.storyboard */,
+				5DF019ED1BF4927E008D371E /* Images.xcassets */,
+				5DF019DC1BF4927E008D371E /* Supporting Files */,
+			);
+			path = "Converter Lab";
+			sourceTree = "<group>";
+		};
+		5DF019DC1BF4927E008D371E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DF019DD1BF4927E008D371E /* Converter Lab-Info.plist */,
+				5DF019DE1BF4927E008D371E /* InfoPlist.strings */,
+				5DF019E11BF4927E008D371E /* main.m */,
+				5DF019E31BF4927E008D371E /* Converter Lab-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DF019FA1BF4927E008D371E /* Converter LabTests */ = {
+			isa = PBXGroup;
+			children = (
+				5DF01A001BF4927E008D371E /* Converter_LabTests.m */,
+				5DF019FB1BF4927E008D371E /* Supporting Files */,
+			);
+			path = "Converter LabTests";
+			sourceTree = "<group>";
+		};
+		5DF019FB1BF4927E008D371E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DF019FC1BF4927E008D371E /* Converter LabTests-Info.plist */,
+				5DF019FD1BF4927E008D371E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DF01A0A1BF4929A008D371E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5DF019E41BF4927E008D371E /* ORAppDelegate.h */,
+				5DF019E51BF4927E008D371E /* ORAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		5DF01A0B1BF492A2008D371E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5D08DE0C1BF9F66B00AD5503 /* BankDetailViewController */,
+				5D8459E81BF5F1AC00987B63 /* DataBuilder */,
+				5D8459E71BF5F1A200987B63 /* DataManager */,
+				5DF01A111BF49DFF008D371E /* DataReciever */,
+				5DF01A0C1BF49BA1008D371E /* BankListViewController */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5DF01A0C1BF49BA1008D371E /* BankListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5DF01A0D1BF49C7A008D371E /* ORBankListViewController.h */,
+				5DF01A0E1BF49C7A008D371E /* ORBankListViewController.m */,
+			);
+			name = BankListViewController;
+			sourceTree = "<group>";
+		};
+		5DF01A101BF49D8C008D371E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5D8459E01BF5E42C00987B63 /* Currency */,
+				5DF021181BF53C9E008D371E /* Bank */,
+				5DF021121BF53AFE008D371E /* ConverterLab.xcdatamodeld */,
+				5DF0210E1BF539CA008D371E /* DatabaseModel */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5DF01A111BF49DFF008D371E /* DataReciever */ = {
+			isa = PBXGroup;
+			children = (
+				5D8854DC1BF690AC0086BC44 /* ORDataRecieverDelegate.h */,
+				5DF01A121BF4A02C008D371E /* ORDataReciever.h */,
+				5DF01A131BF4A02C008D371E /* ORDataReciever.m */,
+			);
+			name = DataReciever;
+			sourceTree = "<group>";
+		};
+		5DF0210E1BF539CA008D371E /* DatabaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DF0210F1BF539FD008D371E /* ORDatabaseModel.h */,
+				5DF021101BF539FD008D371E /* ORDatabaseModel.m */,
+			);
+			name = DatabaseModel;
+			sourceTree = "<group>";
+		};
+		5DF021181BF53C9E008D371E /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				5D8459D61BF5E36900987B63 /* ORBank.h */,
+				5D8459D71BF5E36900987B63 /* ORBank.m */,
+			);
+			name = Bank;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5DF019D11BF4927E008D371E /* Converter Lab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DF01A041BF4927E008D371E /* Build configuration list for PBXNativeTarget "Converter Lab" */;
+			buildPhases = (
+				5DF019CE1BF4927E008D371E /* Sources */,
+				5DF019CF1BF4927E008D371E /* Frameworks */,
+				5DF019D01BF4927E008D371E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Converter Lab";
+			productName = "Converter Lab";
+			productReference = 5DF019D21BF4927E008D371E /* Converter Lab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5DF019F21BF4927E008D371E /* Converter LabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5DF01A071BF4927E008D371E /* Build configuration list for PBXNativeTarget "Converter LabTests" */;
+			buildPhases = (
+				5DF019EF1BF4927E008D371E /* Sources */,
+				5DF019F01BF4927E008D371E /* Frameworks */,
+				5DF019F11BF4927E008D371E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5DF019F91BF4927E008D371E /* PBXTargetDependency */,
+			);
+			name = "Converter LabTests";
+			productName = "Converter LabTests";
+			productReference = 5DF019F31BF4927E008D371E /* Converter LabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5DF019CA1BF4927E008D371E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = OR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Osadchuk;
+				TargetAttributes = {
+					5DF019F21BF4927E008D371E = {
+						TestTargetID = 5DF019D11BF4927E008D371E;
+					};
+				};
+			};
+			buildConfigurationList = 5DF019CD1BF4927E008D371E /* Build configuration list for PBXProject "Converter Lab" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5DF019C91BF4927E008D371E;
+			productRefGroup = 5DF019D31BF4927E008D371E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5DF019D11BF4927E008D371E /* Converter Lab */,
+				5DF019F21BF4927E008D371E /* Converter LabTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5DF019D01BF4927E008D371E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF019EE1BF4927E008D371E /* Images.xcassets in Resources */,
+				5DF019E01BF4927E008D371E /* InfoPlist.strings in Resources */,
+				5DF019E91BF4927E008D371E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF019F11BF4927E008D371E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF019FF1BF4927E008D371E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DF019CE1BF4927E008D371E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */,
+				5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */,
+				5DF01A0F1BF49C7A008D371E /* ORBankListViewController.m in Sources */,
+				5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */,
+				5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */,
+				5D08DE1E1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m in Sources */,
+				5D8459D81BF5E36900987B63 /* ORBank.m in Sources */,
+				5D8A56EF1BF7D1ED00E8BDDC /* ORCurrency.m in Sources */,
+				5D08DE121BF9F6D100AD5503 /* ORBankDetailViewController.m in Sources */,
+				5DF021141BF53AFE008D371E /* ConverterLab.xcdatamodeld in Sources */,
+				5DF021111BF539FD008D371E /* ORDatabaseModel.m in Sources */,
+				5D08DE1B1BFA1D0400AD5503 /* ORBankDescriptionCell.m in Sources */,
+				5DF019E21BF4927E008D371E /* main.m in Sources */,
+				5DF019E61BF4927E008D371E /* ORAppDelegate.m in Sources */,
+				5DF01A141BF4A02C008D371E /* ORDataReciever.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DF019EF1BF4927E008D371E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF01A011BF4927E008D371E /* Converter_LabTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5DF019F91BF4927E008D371E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5DF019D11BF4927E008D371E /* Converter Lab */;
+			targetProxy = 5DF019F81BF4927E008D371E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5DF019DE1BF4927E008D371E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DF019DF1BF4927E008D371E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5DF019E71BF4927E008D371E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DF019E81BF4927E008D371E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5DF019FD1BF4927E008D371E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5DF019FE1BF4927E008D371E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5DF01A021BF4927E008D371E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5DF01A031BF4927E008D371E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5DF01A051BF4927E008D371E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = /.;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Converter Lab/Converter Lab-Prefix.pch";
+				INFOPLIST_FILE = "Converter Lab/Converter Lab-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5DF01A061BF4927E008D371E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Converter Lab/Converter Lab-Prefix.pch";
+				INFOPLIST_FILE = "Converter Lab/Converter Lab-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5DF01A081BF4927E008D371E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Converter Lab.app/Converter Lab";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Converter Lab/Converter Lab-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Converter LabTests/Converter LabTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5DF01A091BF4927E008D371E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Converter Lab.app/Converter Lab";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Converter Lab/Converter Lab-Prefix.pch";
+				INFOPLIST_FILE = "Converter LabTests/Converter LabTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5DF019CD1BF4927E008D371E /* Build configuration list for PBXProject "Converter Lab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF01A021BF4927E008D371E /* Debug */,
+				5DF01A031BF4927E008D371E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DF01A041BF4927E008D371E /* Build configuration list for PBXNativeTarget "Converter Lab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF01A051BF4927E008D371E /* Debug */,
+				5DF01A061BF4927E008D371E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5DF01A071BF4927E008D371E /* Build configuration list for PBXNativeTarget "Converter LabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5DF01A081BF4927E008D371E /* Debug */,
+				5DF01A091BF4927E008D371E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5DF021121BF53AFE008D371E /* ConverterLab.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5DF021131BF53AFE008D371E /* ConverterLab.xcdatamodel */,
+			);
+			currentVersion = 5DF021131BF53AFE008D371E /* ConverterLab.xcdatamodel */;
+			path = ConverterLab.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 5DF019CA1BF4927E008D371E /* Project object */;
+}

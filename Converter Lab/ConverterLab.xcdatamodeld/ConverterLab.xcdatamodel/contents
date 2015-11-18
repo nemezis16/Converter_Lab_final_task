@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="MLPostFactor V0.3" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ORBank" representedClassName="ORBank" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="orgType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currency" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ORCurrency" inverseName="relationship" inverseEntity="ORCurrency" syncable="YES"/>
+    </entity>
+    <entity name="ORCurrency" representedClassName="Currency" syncable="YES">
+        <attribute name="ask" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currencyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ORBank" inverseName="currency" inverseEntity="ORBank" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ORBank" positionX="0" positionY="0" width="128" height="180"/>
+        <element name="ORCurrency" positionX="0" positionY="0" width="128" height="103"/>
+    </elements>
+</model>
