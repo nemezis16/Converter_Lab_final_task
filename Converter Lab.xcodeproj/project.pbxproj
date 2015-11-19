@@ -11,6 +11,10 @@
 		5D08DE1B1BFA1D0400AD5503 /* ORBankDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE1A1BFA1D0400AD5503 /* ORBankDescriptionCell.m */; };
 		5D08DE1E1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE1D1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m */; };
 		5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D08DE201BFA1D4500AD5503 /* ORCurrencyListCell.m */; };
+		5D2B50C81BFE3D4F0051B839 /* UIView+UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B50C71BFE3D4F0051B839 /* UIView+UITableView.m */; };
+		5D2B50CB1BFE3EC20051B839 /* UIView+UITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B50CA1BFE3EC20051B839 /* UIView+UITableViewCell.m */; };
+		5D2B50CF1BFE4B240051B839 /* ORMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B50CE1BFE4B240051B839 /* ORMapViewController.m */; };
+		5D2B50D11BFE4CB60051B839 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B50D01BFE4CB60051B839 /* MapKit.framework */; };
 		5D8459D81BF5E36900987B63 /* ORBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459D71BF5E36900987B63 /* ORBank.m */; };
 		5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E21BF5F17400987B63 /* ORDataManager.m */; };
 		5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E51BF5F19200987B63 /* ORDataBuilder.m */; };
@@ -54,6 +58,13 @@
 		5D08DE1D1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrencyDescriptionCell.m; path = Classes/Views/ORCurrencyDescriptionCell.m; sourceTree = "<group>"; };
 		5D08DE1F1BFA1D4500AD5503 /* ORCurrencyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORCurrencyListCell.h; path = Classes/Views/ORCurrencyListCell.h; sourceTree = "<group>"; };
 		5D08DE201BFA1D4500AD5503 /* ORCurrencyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrencyListCell.m; path = Classes/Views/ORCurrencyListCell.m; sourceTree = "<group>"; };
+		5D2B50C61BFE3D4F0051B839 /* UIView+UITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+UITableView.h"; path = "Classes/ClassCategories/UIView+UITableView.h"; sourceTree = "<group>"; };
+		5D2B50C71BFE3D4F0051B839 /* UIView+UITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+UITableView.m"; path = "Classes/ClassCategories/UIView+UITableView.m"; sourceTree = "<group>"; };
+		5D2B50C91BFE3EC20051B839 /* UIView+UITableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+UITableViewCell.h"; path = "Classes/ClassCategories/UIView+UITableViewCell.h"; sourceTree = "<group>"; };
+		5D2B50CA1BFE3EC20051B839 /* UIView+UITableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+UITableViewCell.m"; path = "Classes/ClassCategories/UIView+UITableViewCell.m"; sourceTree = "<group>"; };
+		5D2B50CD1BFE4B240051B839 /* ORMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORMapViewController.h; path = Classes/Controllers/ORMapViewController.h; sourceTree = "<group>"; };
+		5D2B50CE1BFE4B240051B839 /* ORMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORMapViewController.m; path = Classes/Controllers/ORMapViewController.m; sourceTree = "<group>"; };
+		5D2B50D01BFE4CB60051B839 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5D8459D61BF5E36900987B63 /* ORBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBank.h; path = Classes/Models/ManagedObjectClasses/ORBank.h; sourceTree = "<group>"; };
 		5D8459D71BF5E36900987B63 /* ORBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBank.m; path = Classes/Models/ManagedObjectClasses/ORBank.m; sourceTree = "<group>"; };
 		5D8459E11BF5F17400987B63 /* ORDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataManager.h; path = Classes/Controllers/ORDataManager.h; sourceTree = "<group>"; };
@@ -97,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2B50D11BFE4CB60051B839 /* MapKit.framework in Frameworks */,
 				5DF019D81BF4927E008D371E /* CoreGraphics.framework in Frameworks */,
 				5DF019DA1BF4927E008D371E /* UIKit.framework in Frameworks */,
 				5DF019D61BF4927E008D371E /* Foundation.framework in Frameworks */,
@@ -161,6 +173,26 @@
 			name = CurrencyListCell;
 			sourceTree = "<group>";
 		};
+		5D2B50C11BFE3B4A0051B839 /* ClassCategories */ = {
+			isa = PBXGroup;
+			children = (
+				5D2B50C61BFE3D4F0051B839 /* UIView+UITableView.h */,
+				5D2B50C71BFE3D4F0051B839 /* UIView+UITableView.m */,
+				5D2B50C91BFE3EC20051B839 /* UIView+UITableViewCell.h */,
+				5D2B50CA1BFE3EC20051B839 /* UIView+UITableViewCell.m */,
+			);
+			name = ClassCategories;
+			sourceTree = "<group>";
+		};
+		5D2B50CC1BFE49AE0051B839 /* MapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5D2B50CD1BFE4B240051B839 /* ORMapViewController.h */,
+				5D2B50CE1BFE4B240051B839 /* ORMapViewController.m */,
+			);
+			name = MapViewController;
+			sourceTree = "<group>";
+		};
 		5D8459E01BF5E42C00987B63 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +254,7 @@
 		5DF019D41BF4927E008D371E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D2B50D01BFE4CB60051B839 /* MapKit.framework */,
 				5DF019D51BF4927E008D371E /* Foundation.framework */,
 				5DF019D71BF4927E008D371E /* CoreGraphics.framework */,
 				5DF019D91BF4927E008D371E /* UIKit.framework */,
@@ -285,6 +318,8 @@
 		5DF01A0B1BF492A2008D371E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5D2B50CC1BFE49AE0051B839 /* MapViewController */,
+				5D2B50C11BFE3B4A0051B839 /* ClassCategories */,
 				5D08DE0C1BF9F66B00AD5503 /* BankDetailViewController */,
 				5D8459E81BF5F1AC00987B63 /* DataBuilder */,
 				5D8459E71BF5F1A200987B63 /* DataManager */,
@@ -440,10 +475,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D2B50CF1BFE4B240051B839 /* ORMapViewController.m in Sources */,
 				5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */,
+				5D2B50CB1BFE3EC20051B839 /* UIView+UITableViewCell.m in Sources */,
 				5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */,
 				5DF01A0F1BF49C7A008D371E /* ORBankListViewController.m in Sources */,
 				5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */,
+				5D2B50C81BFE3D4F0051B839 /* UIView+UITableView.m in Sources */,
 				5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */,
 				5D08DE1E1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m in Sources */,
 				5D8459D81BF5E36900987B63 /* ORBank.m in Sources */,

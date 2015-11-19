@@ -8,12 +8,18 @@
 
 #import <CoreData/CoreData.h>
 #import "ORBankListViewController.h"
+#import "ORBankDetailViewController.h"
+#import "ORMapViewController.h"
+
 #import "ORDataManager.h"
 #import "ORDataManagerDelegate.h"
+
 #import "ORDatabaseModel.h"
 #import "ORBank.h"
 #import "ORBankListCell.h"
-#import "ORBankDetailViewController.h"
+
+#import "UIView+UITableView.h"
+#import "UIView+UITableViewCell.h"
 
 @interface ORBankListViewController ()<ORDataManagerDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 
@@ -32,22 +38,18 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     
+    [self performFetch];
+    
     UIBarButtonItem* buttonBar=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:buttonBar];
     
-    [self performFetch];
     
     self.dataManager=[[ORDataManager alloc]init];
     self.dataManager.delegate=self;
     [self.dataManager fetchData];
     
-//    ORDataReciever *dataReciever=[ORDataReciever getClassInstance];
-//    dataReciever.delegate=self;
-//
-    
     
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-    
     [searchBar sizeToFit];
     
     
@@ -61,8 +63,6 @@
     
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(actionSearch:)];
-
-
 }
 
 #pragma mark -
@@ -70,7 +70,7 @@
 
 -(void)actionSearch:(id)sender{
     
-    [UIView animateWithDuration:0.9 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.tableView setTableHeaderView:self.searchController.searchBar];
         [self.searchController.searchBar becomeFirstResponder];
     }completion:^(BOOL finished){
@@ -82,7 +82,7 @@
 -(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
     
     [self performFetch];
-    [UIView animateWithDuration:0.9 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         [self.tableView setTableHeaderView:nil];
         
     }completion:^(BOOL finished){
@@ -115,7 +115,6 @@
         NSError *error = nil;
         self.filteredList = [dataBaseModel.managedObjectContext executeFetchRequest:self.searchFetchRequest error:&error];
     }
-    //[self.tableView reloadData];
 }
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
@@ -161,7 +160,6 @@
         cell = (ORBankListCell *)[self.tableView dequeueReusableCellWithIdentifier:@"Cell" ];
     }
     
-    
     if (cell==nil) {
         cell=[[ORBankListCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
@@ -180,27 +178,37 @@
         return 154.0f;
 }
 
-
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ORBank * selectedBank=[self bankForSender:sender];
+    
     if([segue.identifier isEqualToString:@"BankDetails"]){
         ORBankDetailViewController *detailViewController=(ORBankDetailViewController *)[segue destinationViewController];
-        
-        NSIndexPath *indexPath=[self indexPathWhenClicked:sender];
-        ORBank *selectedBank=nil;
-        
-        selectedBank=[self.fetchedResultController objectAtIndexPath:indexPath];
-        
-        if (selectedBank) {
-            detailViewController.bankSelected=selectedBank;
-        }else{
-            NSLog(@"indexPath.row %i",indexPath.row);
-            UIButton *button=sender;
-            NSInteger index=button.tag;
-            detailViewController.bankSelected=self.filteredList[index];
-        }
-        
+        detailViewController.bankSelected=selectedBank;
     }
+    
+    if ([segue.identifier isEqualToString:@"mapViewController"]) {
+        ORMapViewController *mapViewController=(ORMapViewController *)[segue destinationViewController];
+        mapViewController.bankSelected=selectedBank;
+    }
+    
+}
+
+-(ORBank*)bankForSender:(id)sender{
+    
+    //used class category
+    UITableView *tableView=[sender superTableView];
+    ORBankListCell* bankListCell=[sender superBankListCell];
+    
+    NSIndexPath *indexPath=[tableView indexPathForCell:bankListCell];
+    
+    //is standart table view
+    if (tableView==self.tableView ) {
+        return  [self.fetchedResultController objectAtIndexPath:indexPath];
+    }else{
+        return  [self.filteredList objectAtIndex:indexPath.row];
+    }
+    
 }
 
 #pragma mark -
@@ -208,10 +216,9 @@
 
 -(void)dataDidUpdate{
     
-    NSLog(@"success1");
+    NSLog(@"success");
     [self performFetch];
-  //  [self.tableView reloadData];
-
+    [self.tableView reloadData];
 }
 
 -(void)dataDidFailWithError:(NSError *)error{
@@ -258,17 +265,6 @@
 
 #pragma mark - 
 #pragma mark supporting methods
-
-
--(NSIndexPath*)indexPathWhenClicked:(id)sender{
-    ORBankListCell* currentCell=(ORBankListCell*)[[[sender superview]superview]superview];
-    NSIndexPath* indexPath=[self.tableView indexPathForCell:currentCell];
-//    if (!indexPath) {
-//        UITableView * tableView=(UITableView *)[[currentCell superview]superview];
-//        indexPath= [tableView indexPathForCell:currentCell];
-//    }
-    return indexPath;
-}
 
 -(void)performFetch{
     

@@ -4,6 +4,43 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="ZtJ-EO-lDp">
+            <objects>
+                <viewController id="TPF-8R-Wmc" customClass="ORMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xUL-Un-ezd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jxy-nn-hqN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="A4k-oL-7Ma">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-di-W0k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="TPF-8R-Wmc" id="cby-jo-rcy"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aye-di-W0k" firstAttribute="top" secondItem="A4k-oL-7Ma" secondAttribute="top" id="2mZ-hb-OAN"/>
+                            <constraint firstAttribute="trailing" secondItem="Aye-di-W0k" secondAttribute="trailing" id="6IU-Qa-ZCu"/>
+                            <constraint firstItem="Aye-di-W0k" firstAttribute="leading" secondItem="A4k-oL-7Ma" secondAttribute="leading" id="ih9-61-MqX"/>
+                            <constraint firstAttribute="bottom" secondItem="Aye-di-W0k" secondAttribute="bottom" id="typ-8M-0Zd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gjc-LI-7Ah"/>
+                    <connections>
+                        <outlet property="mapView" destination="Aye-di-W0k" id="Uv8-OD-3AR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ck3-xk-nXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368" y="-682"/>
+        </scene>
         <!--Bank List View Controller-->
         <scene sceneID="hzM-cb-xpd">
             <objects>
@@ -21,30 +58,33 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-m6-Sgh">
-                                            <rect key="frame" x="20" y="123" width="46" height="30"/>
+                                            <rect key="frame" x="20" y="123" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Link">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb">
-                                            <rect key="frame" x="98" y="123" width="46" height="30"/>
+                                            <rect key="frame" x="98" y="123" width="31" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Map">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <segue destination="TPF-8R-Wmc" kind="push" identifier="mapViewController" id="j3H-m4-6Kn"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-e5-5vc">
-                                            <rect key="frame" x="173" y="123" width="46" height="30"/>
+                                            <rect key="frame" x="173" y="123" width="44" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Phone">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk">
-                                            <rect key="frame" x="254" y="123" width="46" height="30"/>
+                                            <rect key="frame" x="254" y="123" width="47" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button">
+                                            <state key="normal" title="Details">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
@@ -256,7 +296,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUz-qD-Fdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1251" y="-5"/>
+            <point key="canvasLocation" x="1783" y="-297"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ap5-4D-3bU">
@@ -274,7 +314,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlm-N7-kf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="276" y="-5"/>
+            <point key="canvasLocation" x="308" y="-5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
