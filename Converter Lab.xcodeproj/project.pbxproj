@@ -20,6 +20,7 @@
 		5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E51BF5F19200987B63 /* ORDataBuilder.m */; };
 		5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D897F281BF9C48800E30C47 /* ORBankListCell.m */; };
 		5D8A56EF1BF7D1ED00E8BDDC /* ORCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */; };
+		5DE50DF31BFFBC3700F42457 /* ORBankCellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE50DF21BFFBC3700F42457 /* ORBankCellButton.m */; };
 		5DF019D61BF4927E008D371E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D51BF4927E008D371E /* Foundation.framework */; };
 		5DF019D81BF4927E008D371E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D71BF4927E008D371E /* CoreGraphics.framework */; };
 		5DF019DA1BF4927E008D371E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D91BF4927E008D371E /* UIKit.framework */; };
@@ -77,6 +78,8 @@
 		5D897F281BF9C48800E30C47 /* ORBankListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankListCell.m; path = Classes/Views/ORBankListCell.m; sourceTree = "<group>"; };
 		5D8A56ED1BF7D1ED00E8BDDC /* ORCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORCurrency.h; path = Classes/Models/ManagedObjectClasses/ORCurrency.h; sourceTree = "<group>"; };
 		5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORCurrency.m; path = Classes/Models/ManagedObjectClasses/ORCurrency.m; sourceTree = "<group>"; };
+		5DE50DF11BFFBC3700F42457 /* ORBankCellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankCellButton.h; path = Classes/Views/ORBankCellButton.h; sourceTree = "<group>"; };
+		5DE50DF21BFFBC3700F42457 /* ORBankCellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankCellButton.m; path = Classes/Views/ORBankCellButton.m; sourceTree = "<group>"; };
 		5DF019D21BF4927E008D371E /* Converter Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Converter Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DF019D51BF4927E008D371E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5DF019D71BF4927E008D371E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -224,12 +227,22 @@
 		5D897F261BF9C37B00E30C47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5DE50DF01BFFBC0200F42457 /* BankCellButton */,
 				5D08DE181BFA1CBC00AD5503 /* CurrencyListCell */,
 				5D08DE171BFA1CA300AD5503 /* CurrencyDescriptionCell */,
 				5D08DE161BFA1C8D00AD5503 /* BankDescriptionCell */,
 				5D08DE0B1BF9F65700AD5503 /* BankListCell */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		5DE50DF01BFFBC0200F42457 /* BankCellButton */ = {
+			isa = PBXGroup;
+			children = (
+				5DE50DF11BFFBC3700F42457 /* ORBankCellButton.h */,
+				5DE50DF21BFFBC3700F42457 /* ORBankCellButton.m */,
+			);
+			name = BankCellButton;
 			sourceTree = "<group>";
 		};
 		5DF019C91BF4927E008D371E = {
@@ -477,6 +490,7 @@
 			files = (
 				5D2B50CF1BFE4B240051B839 /* ORMapViewController.m in Sources */,
 				5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */,
+				5DE50DF31BFFBC3700F42457 /* ORBankCellButton.m in Sources */,
 				5D2B50CB1BFE3EC20051B839 /* UIView+UITableViewCell.m in Sources */,
 				5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */,
 				5DF01A0F1BF49C7A008D371E /* ORBankListViewController.m in Sources */,

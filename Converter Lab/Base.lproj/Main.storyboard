@@ -57,42 +57,50 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-m6-Sgh">
-                                            <rect key="frame" x="20" y="123" width="30" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-m6-Sgh" customClass="ORBankCellButton">
+                                            <rect key="frame" x="0.0" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Link">
+                                            <color key="backgroundColor" red="0.65316091089526351" green="0.7078343022706397" blue="0.73208306760204089" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="ic_link_unactive">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" image="ic_link_active"/>
                                             <connections>
                                                 <action selector="linkButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="lDs-dt-U1v"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb">
-                                            <rect key="frame" x="98" y="123" width="31" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb" customClass="ORBankCellButton">
+                                            <rect key="frame" x="84" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Map">
+                                            <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="ic_mark_unactive">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" image="ic_mark_active"/>
                                             <connections>
                                                 <segue destination="TPF-8R-Wmc" kind="push" identifier="mapViewController" id="j3H-m4-6Kn"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-e5-5vc">
-                                            <rect key="frame" x="173" y="123" width="44" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-e5-5vc" customClass="ORBankCellButton">
+                                            <rect key="frame" x="168" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Phone">
+                                            <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="ic_phone_unactive">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" image="ic_phone_active"/>
                                             <connections>
                                                 <action selector="phoneButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="X9F-qH-heC"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk">
-                                            <rect key="frame" x="254" y="123" width="47" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk" customClass="ORBankCellButton">
+                                            <rect key="frame" x="252" y="119" width="68" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Details">
+                                            <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="ic_dots_unactive">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <state key="highlighted" image="ic_dots_active"/>
                                             <connections>
                                                 <segue destination="fgW-pE-Ti6" kind="push" identifier="BankDetails" id="JvW-CZ-g6H"/>
                                             </connections>
@@ -116,19 +124,25 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Tp-ozh">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Tp-ozh">
                                             <rect key="frame" x="14" y="73" width="291" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0r-xI-3xG">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0r-xI-3xG">
                                             <rect key="frame" x="14" y="94" width="291" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="39" id="I0f-6U-v0R"/>
+                                        <constraint firstAttribute="bottom" secondItem="1wC-Tp-ozh" secondAttribute="bottom" constant="60" id="PSR-R2-XTh"/>
+                                        <constraint firstAttribute="trailing" secondItem="1wC-Tp-ozh" secondAttribute="trailing" constant="15" id="V10-5G-rcu"/>
+                                        <constraint firstAttribute="trailing" secondItem="N0r-xI-3xG" secondAttribute="trailing" constant="15" id="jnx-IA-O9f"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="address" destination="N0r-xI-3xG" id="9Rh-cb-Ej5"/>
@@ -323,6 +337,16 @@
             <point key="canvasLocation" x="308" y="-5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_dots_active" width="28" height="8"/>
+        <image name="ic_dots_unactive" width="28" height="8"/>
+        <image name="ic_link_active" width="26" height="14"/>
+        <image name="ic_link_unactive" width="26" height="14"/>
+        <image name="ic_mark_active" width="16" height="22"/>
+        <image name="ic_mark_unactive" width="16" height="22"/>
+        <image name="ic_phone_active" width="20" height="20"/>
+        <image name="ic_phone_unactive" width="20" height="20"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

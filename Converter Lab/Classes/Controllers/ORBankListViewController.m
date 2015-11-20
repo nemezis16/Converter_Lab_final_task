@@ -23,19 +23,19 @@
 
 @interface ORBankListViewController ()<ORDataManagerDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 
-@property (nonatomic,strong)ORDataManager *dataManager;
-@property (nonatomic,strong) NSFetchedResultsController* fetchedResultController;
+@property (strong, nonatomic) ORDataManager *dataManager;
+@property (strong, nonatomic) NSFetchedResultsController* fetchedResultController;
 
-@property(nonatomic ,strong) UISearchDisplayController *searchController;
+@property (strong, nonatomic) UISearchDisplayController *searchController;
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) NSArray *filteredList;
-
+@property (strong, nonatomic) UIView *shadowButton;
 
 @end
 
 @implementation ORBankListViewController
 
-- (void)viewDidLoad{
+- (void)viewDidLoad  {
     [super viewDidLoad];
     
     [self performFetch];
@@ -118,8 +118,7 @@
     }
 }
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
     [self searchForText:searchString scope:nil];
     return YES;
 }
@@ -138,7 +137,6 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
     if (tableView == self.tableView){
         NSArray *sections = [self.fetchedResultController sections];
         id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
@@ -175,9 +173,12 @@
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return 154.0f;
 }
+
+#pragma mark - 
+#pragma mark actions
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
@@ -196,7 +197,6 @@
 }
 
 -(ORBank*)bankForSender:(id)sender{
-    
     //used class category
     UITableView *tableView=[sender superTableView];
     ORBankListCell* bankListCell=[sender superBankListCell];
@@ -223,21 +223,17 @@
     NSString *phoneNumber = [@"tel:" stringByAppendingString:selectedBank.phone];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
     
-//    NSString *phoneNumber2 = [@"tel://" stringByAppendingString:selectedBank.phone];
-//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber2]];
 }
 
 
 #pragma mark -
 #pragma mark DataManagerDelegate methods
 
--(void)dataDidUpdate{
-    
+-(void)dataDidUpdate {
     NSLog(@"update success");
 }
 
--(void)dataDidFailWithError:(NSError *)error{
-    
+-(void)dataDidFailWithError:(NSError *)error {
     UIAlertView* alertView=[[UIAlertView alloc]initWithTitle:@"Ошибка" message:@"Нельзя обновить данные :[\n Пожалуйста, проверьте соединение" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
@@ -275,10 +271,6 @@
         }
     }
 }
-
-
-#pragma mark - 
-#pragma mark supporting methods
 
 -(void)performFetch{
     

@@ -25,11 +25,13 @@
     self.layer.shadowOffset = CGSizeMake(0, 1);
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.45;
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
-    [super setSelected:selected animated:animated];
+    //[super setSelected:selected animated:animated];
     
     // Configure the view for the selected state
 }
