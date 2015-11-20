@@ -63,6 +63,9 @@
                                             <state key="normal" title="Link">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="linkButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="lDs-dt-U1v"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb">
                                             <rect key="frame" x="98" y="123" width="31" height="30"/>
@@ -80,6 +83,9 @@
                                             <state key="normal" title="Phone">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="phoneButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="X9F-qH-heC"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk">
                                             <rect key="frame" x="254" y="123" width="47" height="30"/>
@@ -129,10 +135,10 @@
                                     <outlet property="callButton" destination="NDH-e5-5vc" id="2gz-KF-EMp"/>
                                     <outlet property="city" destination="1pa-o3-pqm" id="k7j-Ap-z7I"/>
                                     <outlet property="detailsButton" destination="68w-8b-AEk" id="vPq-bn-izl"/>
+                                    <outlet property="linkButton" destination="7rf-m6-Sgh" id="cCZ-wZ-aDL"/>
                                     <outlet property="mapButton" destination="t6n-4o-KYb" id="p00-1Z-ehm"/>
                                     <outlet property="phone" destination="1wC-Tp-ozh" id="AId-Jh-68C"/>
                                     <outlet property="region" destination="4es-vf-vGn" id="a6y-3A-IMB"/>
-                                    <outlet property="shareButton" destination="7rf-m6-Sgh" id="jqx-lW-F64"/>
                                     <outlet property="title" destination="maO-KL-7d0" id="4KO-Zh-ZmI"/>
                                 </connections>
                             </tableViewCell>

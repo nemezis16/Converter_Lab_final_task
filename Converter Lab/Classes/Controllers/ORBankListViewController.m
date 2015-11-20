@@ -211,6 +211,22 @@
     }
     
 }
+- (IBAction)linkButtonPressed:(id)sender {
+    
+    ORBank * selectedBank=[self bankForSender:sender];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:selectedBank.link]];
+}
+
+- (IBAction)phoneButtonPressed:(id)sender {
+    ORBank * selectedBank=[self bankForSender:sender];
+    
+    NSString *phoneNumber = [@"tel:" stringByAppendingString:selectedBank.phone];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+    
+//    NSString *phoneNumber2 = [@"tel://" stringByAppendingString:selectedBank.phone];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber2]];
+}
+
 
 #pragma mark -
 #pragma mark DataManagerDelegate methods
