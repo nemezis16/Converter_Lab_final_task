@@ -37,7 +37,7 @@
 //    return contactData;
 //}
 
--(void)makeFetchRequest{
+-(void)makeRequest{
     self.targetURL=[NSURL URLWithString:@"http://resources.finance.ua/ru/public/currency-cash.json"];
     [self loadDataWithURL:self.targetURL];
    // NSLog(@"%@ delegate",[self.delegate description]);

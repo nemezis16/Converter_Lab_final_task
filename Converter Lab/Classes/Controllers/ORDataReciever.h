@@ -15,7 +15,6 @@
 
 @property (weak ,nonatomic) id<ORDataRecieverDelegate> delegate;
 
-+(id)getClassInstance;
--(void)makeFetchRequest;
+-(void)makeRequest;
 
 @end

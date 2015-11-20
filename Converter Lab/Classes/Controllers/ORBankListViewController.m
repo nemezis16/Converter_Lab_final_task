@@ -40,10 +40,6 @@
     
     [self performFetch];
     
-    UIBarButtonItem* buttonBar=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:buttonBar];
-    
-    
     self.dataManager=[[ORDataManager alloc]init];
     self.dataManager.delegate=self;
     [self.dataManager fetchData];
@@ -55,12 +51,14 @@
     
     [self setSearchController:[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self]];
     
-    
     [self.searchController setSearchResultsDataSource:self];
     [self.searchController setSearchResultsDelegate:self];
     [self.searchController setDelegate:self];
     [searchBar setDelegate:self];
     
+    
+    UIBarButtonItem* buttonBar=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem setBackBarButtonItem:buttonBar];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(actionSearch:)];
 }
@@ -69,19 +67,22 @@
 #pragma mark Searching methods
 
 -(void)actionSearch:(id)sender{
+    [(UIButton *)sender setEnabled:NO];
+    [self.searchController setActive:NO];
     
     [UIView animateWithDuration:0.3 animations:^{
         [self.tableView setTableHeaderView:self.searchController.searchBar];
         [self.searchController.searchBar becomeFirstResponder];
     }completion:^(BOOL finished){
-        
+        [(UIButton *)sender setEnabled:YES];
+        [self.searchController setActive:YES];
     }];
 }
 
 
 -(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
     
-    [self performFetch];
+    //[self performFetch];
     [UIView animateWithDuration:0.3 animations:^{
         [self.tableView setTableHeaderView:nil];
         
@@ -216,14 +217,12 @@
 
 -(void)dataDidUpdate{
     
-    NSLog(@"success");
-    [self performFetch];
-    [self.tableView reloadData];
+    NSLog(@"update success");
 }
 
 -(void)dataDidFailWithError:(NSError *)error{
     
-    UIAlertView* alertView=[[UIAlertView alloc]initWithTitle:@"Error" message:@"Data can't be updated :[\n Please, check your connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView* alertView=[[UIAlertView alloc]initWithTitle:@"Ошибка" message:@"Нельзя обновить данные :[\n Пожалуйста, проверьте соединение" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
 
@@ -262,7 +261,6 @@
 }
 
 
-
 #pragma mark - 
 #pragma mark supporting methods
 
@@ -276,6 +274,7 @@
     self.fetchedResultController=[[NSFetchedResultsController alloc]initWithFetchRequest:fetchRequest managedObjectContext:dataBaseModel.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
     
     [self.fetchedResultController setDelegate:self];
+    
     
     NSError *error = nil;
     [self.fetchedResultController performFetch:&error];

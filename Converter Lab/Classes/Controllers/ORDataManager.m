@@ -19,15 +19,17 @@
 -(void)fetchData{
     self.dataReciever=[[ORDataReciever alloc]init];
     self.dataReciever.delegate=self;
-    [self.dataReciever makeFetchRequest];
+    [self.dataReciever makeRequest];
 }
 
 -(void)didRecieveJSON:(NSMutableData *)data{
     
+    [self.delegate dataDidUpdate];
+    
     ORDataBuilder* dataBuilder=[ORDataBuilder new];
     [dataBuilder clearDatabase];
     [dataBuilder updateManagedObjectContextWithData:data];
-    [self.delegate dataDidUpdate];
+    
     
 }
 
