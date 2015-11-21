@@ -37,6 +37,7 @@
 
 - (void)viewDidLoad  {
     [super viewDidLoad];
+    [self setTitle:@"Converter Lab"];
     
     [self performFetch];
     
@@ -60,7 +61,31 @@
     UIBarButtonItem* buttonBar=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:buttonBar];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(actionSearch:)];
+    self.navigationItem.rightBarButtonItem = [self searchBarButtonItem];
+}
+
+#pragma mark -
+#pragma mark style
+
+-(void)setTitle:(NSString *)title {
+    [super setTitle:title];
+    UIColor *textColor=[UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      textColor,NSForegroundColorAttributeName,
+      [UIFont fontWithName:@"SinhalaSangamMN" size:21.0],NSFontAttributeName,
+      nil]];
+}
+
+-(UIBarButtonItem *)searchBarButtonItem {
+    UIImage* imageSearch = [UIImage imageNamed:@"ic_search"];
+    CGRect frameImg = CGRectMake(0, 0, imageSearch.size.width, imageSearch.size.height);
+    UIButton *searchButton = [[UIButton alloc] initWithFrame:frameImg];
+    [searchButton setImage:imageSearch forState:UIControlStateNormal];
+    [searchButton addTarget:self action:@selector(actionSearch:)
+         forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *searchBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:searchButton];
+    return searchBarButtonItem;
 }
 
 #pragma mark -

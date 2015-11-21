@@ -26,7 +26,28 @@
     self.layer.shadowRadius = 3;
     self.layer.shadowOpacity = 0.45;
     
+    [self setupConstraints];
     
+    
+    
+}
+
+-(void)setupConstraints{
+    [self setupWidthForButton:self.detailsButton];
+    [self setupWidthForButton:self.callButton];
+    [self setupWidthForButton:self.linkButton];
+    [self setupWidthForButton:self.mapButton];
+}
+
+-(void)setupWidthForButton:(UIButton *)button{
+    
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:button
+                                                     attribute:NSLayoutAttributeWidth
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeWidth
+                                                    multiplier:0.25
+                                                      constant:0]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -43,4 +64,7 @@
     frame.size.height -= 2 * 3.0f;
     [super setFrame:frame];
 }
+
+
+
 @end

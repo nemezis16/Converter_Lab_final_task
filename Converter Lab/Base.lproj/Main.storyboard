@@ -57,7 +57,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="154"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-m6-Sgh" customClass="ORBankCellButton">
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-m6-Sgh" customClass="ORBankCellButton">
                                             <rect key="frame" x="0.0" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.65316091089526351" green="0.7078343022706397" blue="0.73208306760204089" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
@@ -69,7 +69,7 @@
                                                 <action selector="linkButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="lDs-dt-U1v"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb" customClass="ORBankCellButton">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-4o-KYb" customClass="ORBankCellButton">
                                             <rect key="frame" x="84" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
@@ -81,7 +81,7 @@
                                                 <segue destination="TPF-8R-Wmc" kind="push" identifier="mapViewController" id="j3H-m4-6Kn"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-e5-5vc" customClass="ORBankCellButton">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDH-e5-5vc" customClass="ORBankCellButton">
                                             <rect key="frame" x="168" y="119" width="84" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
@@ -93,7 +93,7 @@
                                                 <action selector="phoneButtonPressed:" destination="j6V-D3-RJQ" eventType="touchUpInside" id="X9F-qH-heC"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk" customClass="ORBankCellButton">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68w-8b-AEk" customClass="ORBankCellButton">
                                             <rect key="frame" x="252" y="119" width="68" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.65316091089999995" green="0.7078343023" blue="0.73208306759999997" alpha="0.68999999999999995" colorSpace="calibratedRGB"/>
@@ -108,40 +108,57 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maO-KL-7d0">
                                             <rect key="frame" x="14" y="8" width="286" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
+                                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="20"/>
+                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="region" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4es-vf-vGn">
-                                            <rect key="frame" x="14" y="29" width="286" height="21"/>
+                                            <rect key="frame" x="14" y="31" width="286" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="highlightedColor"/>
+                                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="16"/>
+                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="city" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pa-o3-pqm">
                                             <rect key="frame" x="14" y="52" width="291" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="highlightedColor"/>
+                                            <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="16"/>
+                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="phone" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wC-Tp-ozh">
                                             <rect key="frame" x="14" y="73" width="291" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" cyan="0.45723658800125122" magenta="0.25054174270072993" yellow="0.18623638153076172" black="0.29199931569343068" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                            <color key="highlightedColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="address" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0r-xI-3xG">
-                                            <rect key="frame" x="14" y="94" width="291" height="21"/>
+                                            <rect key="frame" x="14" y="90" width="291" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="highlightedColor"/>
+                                            <color key="textColor" cyan="0.45723658800125122" magenta="0.25054174270072993" yellow="0.18623638153076172" black="0.29199931569343068" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                            <color key="highlightedColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="68w-8b-AEk" secondAttribute="trailing" id="G7n-Ow-xsI"/>
                                         <constraint firstAttribute="bottom" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="39" id="I0f-6U-v0R"/>
+                                        <constraint firstAttribute="bottom" secondItem="t6n-4o-KYb" secondAttribute="bottom" id="KH6-lu-Cof"/>
                                         <constraint firstAttribute="bottom" secondItem="1wC-Tp-ozh" secondAttribute="bottom" constant="60" id="PSR-R2-XTh"/>
+                                        <constraint firstItem="t6n-4o-KYb" firstAttribute="top" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="4" id="RzJ-ve-VID"/>
+                                        <constraint firstItem="68w-8b-AEk" firstAttribute="top" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="4" id="SRW-TI-t0u"/>
+                                        <constraint firstItem="t6n-4o-KYb" firstAttribute="leading" secondItem="7rf-m6-Sgh" secondAttribute="trailing" id="Sfc-8c-8Xq"/>
                                         <constraint firstAttribute="trailing" secondItem="1wC-Tp-ozh" secondAttribute="trailing" constant="15" id="V10-5G-rcu"/>
+                                        <constraint firstItem="68w-8b-AEk" firstAttribute="leading" secondItem="NDH-e5-5vc" secondAttribute="trailing" id="WWv-qz-vPs"/>
+                                        <constraint firstItem="NDH-e5-5vc" firstAttribute="top" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="4" id="ZE5-bg-BvH"/>
+                                        <constraint firstItem="NDH-e5-5vc" firstAttribute="leading" secondItem="t6n-4o-KYb" secondAttribute="trailing" id="bFU-wM-B0A"/>
+                                        <constraint firstAttribute="bottom" secondItem="NDH-e5-5vc" secondAttribute="bottom" id="emg-aF-2FM"/>
                                         <constraint firstAttribute="trailing" secondItem="N0r-xI-3xG" secondAttribute="trailing" constant="15" id="jnx-IA-O9f"/>
+                                        <constraint firstItem="7rf-m6-Sgh" firstAttribute="top" secondItem="N0r-xI-3xG" secondAttribute="bottom" constant="4" id="js0-Ag-GzA"/>
+                                        <constraint firstAttribute="bottom" secondItem="7rf-m6-Sgh" secondAttribute="bottom" id="qQM-RM-beH"/>
+                                        <constraint firstItem="7rf-m6-Sgh" firstAttribute="leading" secondItem="SxG-oo-HG3" secondAttribute="leading" id="qZ2-pL-i2F"/>
+                                        <constraint firstAttribute="bottom" secondItem="68w-8b-AEk" secondAttribute="bottom" id="wX5-9U-pyN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
