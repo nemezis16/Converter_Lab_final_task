@@ -28,6 +28,16 @@
     
     self.currencies=[[self.bankSelected currency] allObjects];
     
+    [self configFloatButton];
+    [self customizeTitle];
+    [self customizeButtonBarShare];
+}
+
+#pragma mark - 
+#pragma mark style
+
+-(void)configFloatButton {
+    
     CGRect floatFrame = CGRectMake([UIScreen mainScreen].bounds.size.width - 44 - 20, [UIScreen mainScreen].bounds.size.height - 44 - 20, 44, 44);
     
     self.floatingButton = [[VCFloatingActionButton alloc]initWithFrame:floatFrame normalImage:[UIImage imageNamed:@"ic_hamburger"] andPressedImage:[UIImage imageNamed:@"ic_close"] withScrollview:self.tableView];
@@ -37,12 +47,7 @@
     [self.view addSubview:self.floatingButton];
     self.floatingButton.imageArray = @[@"ic_phone_floating",@"ic_link_floating",@"ic_mark_floating"];
     self.floatingButton.labelArray = @[@" Позвонить  ",@" Сайт  ",@" Карта  "];
-    
-    [self customizeTitle];
 }
-
-#pragma mark - 
-#pragma mark style
 
 -(void)customizeTitle {
     
@@ -78,6 +83,17 @@
     _headerTitleSubtitleView.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
 
     self.navigationItem.titleView = _headerTitleSubtitleView;
+}
+
+-(void)customizeButtonBarShare {
+    UIImage* imageShare = [UIImage imageNamed:@"ic_share"];
+    CGRect frameImg = CGRectMake(0, 0, imageShare.size.width, imageShare.size.height);
+    UIButton *shareButton = [[UIButton alloc] initWithFrame:frameImg];
+    [shareButton setImage:imageShare forState:UIControlStateNormal];
+    [shareButton addTarget:self action:@selector(actionShare:)
+           forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *searchBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    self.navigationItem.rightBarButtonItem =  searchBarButtonItem;
 }
 
 #pragma mark - Table view data source required methods
@@ -194,6 +210,16 @@
     ORMapViewController *controller = (ORMapViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"mapViewController"];
     controller.bankSelected=self.bankSelected;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+
+#pragma mark -
+#pragma mark Share 
+
+-(void)actionShare:(id) sender {
+    
+    //in process
+    
 }
 
 

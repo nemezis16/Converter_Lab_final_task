@@ -32,7 +32,6 @@
 		5DF019E21BF4927E008D371E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF019E11BF4927E008D371E /* main.m */; };
 		5DF019E61BF4927E008D371E /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF019E51BF4927E008D371E /* ORAppDelegate.m */; };
 		5DF019E91BF4927E008D371E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019E71BF4927E008D371E /* Main.storyboard */; };
-		5DF019EE1BF4927E008D371E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019ED1BF4927E008D371E /* Images.xcassets */; };
 		5DF019F51BF4927E008D371E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019F41BF4927E008D371E /* XCTest.framework */; };
 		5DF019F61BF4927E008D371E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D51BF4927E008D371E /* Foundation.framework */; };
 		5DF019F71BF4927E008D371E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D91BF4927E008D371E /* UIKit.framework */; };
@@ -42,6 +41,7 @@
 		5DF01A141BF4A02C008D371E /* ORDataReciever.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF01A131BF4A02C008D371E /* ORDataReciever.m */; };
 		5DF021111BF539FD008D371E /* ORDatabaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DF021101BF539FD008D371E /* ORDatabaseModel.m */; };
 		5DF021141BF53AFE008D371E /* ConverterLab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DF021121BF53AFE008D371E /* ConverterLab.xcdatamodeld */; };
+		5DF036121C0216A7006C79BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DF019ED1BF4927E008D371E /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,9 +489,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF036121C0216A7006C79BD /* Images.xcassets in Resources */,
 				5DABBC681C01E66800BCC429 /* Converter Lab-Info.plist in Resources */,
 				5D5B40B71C009FFD00A72310 /* floatTableViewCell.xib in Resources */,
-				5DF019EE1BF4927E008D371E /* Images.xcassets in Resources */,
 				5DF019E01BF4927E008D371E /* InfoPlist.strings in Resources */,
 				5DF019E91BF4927E008D371E /* Main.storyboard in Resources */,
 			);
