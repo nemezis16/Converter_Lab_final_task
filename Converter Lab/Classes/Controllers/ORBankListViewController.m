@@ -37,7 +37,6 @@
 
 - (void)viewDidLoad  {
     [super viewDidLoad];
-    [self setTitle:@"Converter Lab"];
     
     [self performFetch];
     
@@ -48,20 +47,16 @@
     
     UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
     [searchBar sizeToFit];
-    
-    
     [self setSearchController:[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self]];
-    
     [self.searchController setSearchResultsDataSource:self];
     [self.searchController setSearchResultsDelegate:self];
     [self.searchController setDelegate:self];
     [searchBar setDelegate:self];
     
-    
-    UIBarButtonItem* buttonBar=[[UIBarButtonItem alloc]initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:buttonBar];
-    
-    self.navigationItem.rightBarButtonItem = [self searchBarButtonItem];
+  
+    [self customizeSearchBarButtonItem];
+    [self customizeBackBarButtonItem];
+    [self setTitle:@"Converter Lab"];
 }
 
 #pragma mark -
@@ -77,7 +72,7 @@
       nil]];
 }
 
--(UIBarButtonItem *)searchBarButtonItem {
+-(void)customizeSearchBarButtonItem {
     UIImage* imageSearch = [UIImage imageNamed:@"ic_search"];
     CGRect frameImg = CGRectMake(0, 0, imageSearch.size.width, imageSearch.size.height);
     UIButton *searchButton = [[UIButton alloc] initWithFrame:frameImg];
@@ -85,7 +80,16 @@
     [searchButton addTarget:self action:@selector(actionSearch:)
          forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *searchBarButtonItem =[[UIBarButtonItem alloc] initWithCustomView:searchButton];
-    return searchBarButtonItem;
+    self.navigationItem.rightBarButtonItem =  searchBarButtonItem;
+}
+
+-(void)customizeBackBarButtonItem {
+    
+    UIImage *backBtn = [UIImage imageNamed:@"ic_back"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
+    self.navigationController.navigationBar.backIndicatorImage=backBtn;
+
 }
 
 #pragma mark -

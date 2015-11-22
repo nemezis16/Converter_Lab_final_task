@@ -36,6 +36,49 @@
     [self.view addSubview:self.floatingButton];
     self.floatingButton.imageArray = @[@"ic_phone_floating",@"ic_link_floating",@"ic_mark_floating"];
     self.floatingButton.labelArray = @[@" Позвонить  ",@" Сайт  ",@" Карта  "];
+    
+    [self customizeTitle];
+}
+
+#pragma mark - 
+#pragma mark style
+
+-(void)customizeTitle {
+    
+    CGRect headerTitleSubtitleFrame = CGRectMake(0, 0, 200, 44);
+    UIView* _headerTitleSubtitleView = [[UILabel alloc] initWithFrame:headerTitleSubtitleFrame];
+    _headerTitleSubtitleView.backgroundColor = [UIColor clearColor];
+    _headerTitleSubtitleView.autoresizesSubviews = NO;
+    
+    CGRect titleFrame = CGRectMake(0, 2, 200, 24);
+    UILabel *titleView = [[UILabel alloc] initWithFrame:titleFrame];
+    titleView.backgroundColor = [UIColor clearColor];
+    titleView.font = [UIFont fontWithName:@"SinhalaSangamMN" size:18.0];
+    titleView.textAlignment = NSTextAlignmentLeft;
+    titleView.textColor = [UIColor whiteColor];
+    titleView.shadowColor = [UIColor darkGrayColor];
+    titleView.shadowOffset = CGSizeMake(0, -1);
+    titleView.text = self.bankSelected.title;
+    titleView.adjustsFontSizeToFitWidth = YES;
+    [_headerTitleSubtitleView addSubview:titleView];
+    
+    CGRect subtitleFrame = CGRectMake(0, 20, 200, 44-24);
+    UILabel *subtitleView = [[UILabel alloc] initWithFrame:subtitleFrame];
+    subtitleView.backgroundColor = [UIColor clearColor];
+    subtitleView.font = [UIFont fontWithName:@"SinhalaSangamMN" size:13.0];
+    subtitleView.textAlignment = NSTextAlignmentLeft;
+    subtitleView.textColor = [UIColor whiteColor];
+    subtitleView.shadowColor = [UIColor darkGrayColor];
+    subtitleView.shadowOffset = CGSizeMake(0, -1);
+    subtitleView.text =self.bankSelected.city;
+    subtitleView.adjustsFontSizeToFitWidth = YES;
+    [_headerTitleSubtitleView addSubview:subtitleView];
+    
+    _headerTitleSubtitleView.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
+
+    self.navigationItem.titleView = _headerTitleSubtitleView;
+
+    
 }
 
 #pragma mark - Table view data source required methods
