@@ -7,7 +7,7 @@
         <!--Map View Controller-->
         <scene sceneID="ZtJ-EO-lDp">
             <objects>
-                <viewController id="TPF-8R-Wmc" customClass="ORMapViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapViewController" id="TPF-8R-Wmc" customClass="ORMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xUL-Un-ezd"/>
                         <viewControllerLayoutGuide type="bottom" id="Jxy-nn-hqN"/>

@@ -11,6 +11,7 @@
 #import "ORCurrencyDescriptionCell.h"
 #import "ORCurrencyListCell.h"
 #import "ORCurrency.h"
+#import "ORMapViewController.h"
 
 @interface ORBankDetailViewController ()
 
@@ -77,8 +78,6 @@
     _headerTitleSubtitleView.autoresizingMask=UIViewAutoresizingFlexibleLeftMargin;
 
     self.navigationItem.titleView = _headerTitleSubtitleView;
-
-    
 }
 
 #pragma mark - Table view data source required methods
@@ -161,35 +160,41 @@
         self.floatingButton.transform = CGAffineTransformMakeTranslation(0, scrollView.contentOffset.y);
 }
 
+#pragma mark -
+#pragma mark float button menu
+
 -(void)didSelectMenuOptionAtIndex:(NSInteger)row{
     switch (row) {
         case 0:
-            NSLog(@"phone");
+            [self goToPhone];
             break;
         case 1:
-            NSLog(@"link");
+            [self goToLink];
             break;
         case 2:
-            NSLog(@"map");
+            [self goToMap];
             break;
         default:
             break;
     }
 }
 
+-(void)goToLink {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.bankSelected.link]];
+}
 
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    UIView *shadowView  =  [[UIView alloc] initWithFrame: CGRectMake(0,0,320,100)];
-//    shadowView.backgroundColor = [UIColor whiteColor];
-//    
-//    // Doing the Decoration Part
-//    shadowView.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    shadowView.layer.shadowOffset = CGSizeMake(1.0f, 1.0f);
-//    shadowView.layer.shadowRadius = 3.0f;
-//    shadowView.layer.shadowOpacity = 1.0f;
-//    
-//    return shadowView;
-//}
+-(void)goToPhone {
+    NSString *phoneNumber = [@"tel:" stringByAppendingString:self.bankSelected.phone];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
+}
+
+-(void)goToMap {
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"  bundle: nil];
+    ORMapViewController *controller = (ORMapViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"mapViewController"];
+    controller.bankSelected=self.bankSelected;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 
 
 @end
