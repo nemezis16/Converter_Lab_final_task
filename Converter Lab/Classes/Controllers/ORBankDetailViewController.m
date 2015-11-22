@@ -14,7 +14,9 @@
 
 @interface ORBankDetailViewController ()
 
-@property (nonatomic,strong)NSArray * currencies;
+@property (strong,nonatomic) NSArray * currencies;
+@property (strong,nonatomic) VCFloatingActionButton* floatingButton;
+
 @end
 
 @implementation ORBankDetailViewController
@@ -25,6 +27,15 @@
     
     self.currencies=[[self.bankSelected currency] allObjects];
     
+    CGRect floatFrame = CGRectMake([UIScreen mainScreen].bounds.size.width - 44 - 20, [UIScreen mainScreen].bounds.size.height - 44 - 20, 44, 44);
+    
+    self.floatingButton = [[VCFloatingActionButton alloc]initWithFrame:floatFrame normalImage:[UIImage imageNamed:@"ic_hamburger"] andPressedImage:[UIImage imageNamed:@"ic_close"] withScrollview:self.tableView];
+    
+    self.floatingButton.delegate = self;
+    
+    [self.view addSubview:self.floatingButton];
+    self.floatingButton.imageArray = @[@"ic_phone_floating",@"ic_link_floating",@"ic_mark_floating"];
+    self.floatingButton.labelArray = @[@" Позвонить  ",@" Сайт  ",@" Карта  "];
 }
 
 #pragma mark - Table view data source required methods
@@ -102,6 +113,27 @@
             return 0;
     }
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+        self.floatingButton.transform = CGAffineTransformMakeTranslation(0, scrollView.contentOffset.y);
+}
+
+-(void)didSelectMenuOptionAtIndex:(NSInteger)row{
+    switch (row) {
+        case 0:
+            NSLog(@"phone");
+            break;
+        case 1:
+            NSLog(@"link");
+            break;
+        case 2:
+            NSLog(@"map");
+            break;
+        default:
+            break;
+    }
+}
+
 
 //-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 //    UIView *shadowView  =  [[UIView alloc] initWithFrame: CGRectMake(0,0,320,100)];

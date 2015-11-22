@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ORBank.h"
+#import "VCFloatingActionButton.h"
 
-@interface ORBankDetailViewController : UITableViewController
+@interface ORBankDetailViewController : UITableViewController<floatMenuDelegate>
 
 @property (nonatomic, strong)ORBank * bankSelected;
 

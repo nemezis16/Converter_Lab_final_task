@@ -129,10 +129,10 @@
         
         [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
         
-        NSPredicate *predicateTitle = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@", searchText];
-        NSPredicate *predicateCity = [NSPredicate predicateWithFormat:@"city CONTAINS[cd] %@", searchText];
-        NSPredicate *predicateAddres = [NSPredicate predicateWithFormat:@"address CONTAINS[cd] %@", searchText];
-        NSPredicate *predicateRegion = [NSPredicate predicateWithFormat:@"region CONTAINS[cd] %@", searchText];
+        NSPredicate *predicateTitle = [NSPredicate predicateWithFormat:@"title BEGINSWITH[cd] %@", searchText];
+        NSPredicate *predicateCity = [NSPredicate predicateWithFormat:@"city BEGINSWITH[cd] %@", searchText];
+        NSPredicate *predicateAddres = [NSPredicate predicateWithFormat:@"address BEGINSWITH[cd] %@", searchText];
+        NSPredicate *predicateRegion = [NSPredicate predicateWithFormat:@"region BEGINSWITH[cd] %@", searchText];
         
         NSPredicate *predicate =[NSCompoundPredicate orPredicateWithSubpredicates:@[predicateTitle,predicateRegion,predicateCity,predicateAddres]];
         
@@ -158,6 +158,7 @@
         return [[self.fetchedResultController sections] count];
     }
     else
+        tableView.allowsSelection=NO;
         return 1;
 }
 

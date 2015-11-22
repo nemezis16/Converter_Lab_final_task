@@ -15,6 +15,9 @@
 		5D2B50CB1BFE3EC20051B839 /* UIView+UITableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B50CA1BFE3EC20051B839 /* UIView+UITableViewCell.m */; };
 		5D2B50CF1BFE4B240051B839 /* ORMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2B50CE1BFE4B240051B839 /* ORMapViewController.m */; };
 		5D2B50D11BFE4CB60051B839 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2B50D01BFE4CB60051B839 /* MapKit.framework */; };
+		5D5B40B21C009DB300A72310 /* VCFloatingActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B40B11C009DB300A72310 /* VCFloatingActionButton.m */; };
+		5D5B40B61C009FFD00A72310 /* floatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D5B40B41C009FFD00A72310 /* floatTableViewCell.m */; };
+		5D5B40B71C009FFD00A72310 /* floatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D5B40B51C009FFD00A72310 /* floatTableViewCell.xib */; };
 		5D8459D81BF5E36900987B63 /* ORBank.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459D71BF5E36900987B63 /* ORBank.m */; };
 		5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E21BF5F17400987B63 /* ORDataManager.m */; };
 		5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8459E51BF5F19200987B63 /* ORDataBuilder.m */; };
@@ -66,6 +69,11 @@
 		5D2B50CD1BFE4B240051B839 /* ORMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORMapViewController.h; path = Classes/Controllers/ORMapViewController.h; sourceTree = "<group>"; };
 		5D2B50CE1BFE4B240051B839 /* ORMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORMapViewController.m; path = Classes/Controllers/ORMapViewController.m; sourceTree = "<group>"; };
 		5D2B50D01BFE4CB60051B839 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5D5B40B01C009DB300A72310 /* VCFloatingActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCFloatingActionButton.h; sourceTree = "<group>"; };
+		5D5B40B11C009DB300A72310 /* VCFloatingActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCFloatingActionButton.m; sourceTree = "<group>"; };
+		5D5B40B31C009FFD00A72310 /* floatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = floatTableViewCell.h; sourceTree = "<group>"; };
+		5D5B40B41C009FFD00A72310 /* floatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = floatTableViewCell.m; sourceTree = "<group>"; };
+		5D5B40B51C009FFD00A72310 /* floatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = floatTableViewCell.xib; sourceTree = "<group>"; };
 		5D8459D61BF5E36900987B63 /* ORBank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBank.h; path = Classes/Models/ManagedObjectClasses/ORBank.h; sourceTree = "<group>"; };
 		5D8459D71BF5E36900987B63 /* ORBank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBank.m; path = Classes/Models/ManagedObjectClasses/ORBank.m; sourceTree = "<group>"; };
 		5D8459E11BF5F17400987B63 /* ORDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORDataManager.h; path = Classes/Controllers/ORDataManager.h; sourceTree = "<group>"; };
@@ -196,6 +204,18 @@
 			name = MapViewController;
 			sourceTree = "<group>";
 		};
+		5D5B40AF1C009DA200A72310 /* VCFloat button */ = {
+			isa = PBXGroup;
+			children = (
+				5D5B40B31C009FFD00A72310 /* floatTableViewCell.h */,
+				5D5B40B41C009FFD00A72310 /* floatTableViewCell.m */,
+				5D5B40B51C009FFD00A72310 /* floatTableViewCell.xib */,
+				5D5B40B01C009DB300A72310 /* VCFloatingActionButton.h */,
+				5D5B40B11C009DB300A72310 /* VCFloatingActionButton.m */,
+			);
+			name = "VCFloat button";
+			sourceTree = "<group>";
+		};
 		5D8459E01BF5E42C00987B63 /* Currency */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +247,7 @@
 		5D897F261BF9C37B00E30C47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5D5B40AF1C009DA200A72310 /* VCFloat button */,
 				5DE50DF01BFFBC0200F42457 /* BankCellButton */,
 				5D08DE181BFA1CBC00AD5503 /* CurrencyListCell */,
 				5D08DE171BFA1CA300AD5503 /* CurrencyDescriptionCell */,
@@ -467,6 +488,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5B40B71C009FFD00A72310 /* floatTableViewCell.xib in Resources */,
 				5DF019EE1BF4927E008D371E /* Images.xcassets in Resources */,
 				5DF019E01BF4927E008D371E /* InfoPlist.strings in Resources */,
 				5DF019E91BF4927E008D371E /* Main.storyboard in Resources */,
@@ -490,6 +512,7 @@
 			files = (
 				5D2B50CF1BFE4B240051B839 /* ORMapViewController.m in Sources */,
 				5D897F291BF9C48800E30C47 /* ORBankListCell.m in Sources */,
+				5D5B40B61C009FFD00A72310 /* floatTableViewCell.m in Sources */,
 				5DE50DF31BFFBC3700F42457 /* ORBankCellButton.m in Sources */,
 				5D2B50CB1BFE3EC20051B839 /* UIView+UITableViewCell.m in Sources */,
 				5D08DE211BFA1D4500AD5503 /* ORCurrencyListCell.m in Sources */,
@@ -502,6 +525,7 @@
 				5D8A56EF1BF7D1ED00E8BDDC /* ORCurrency.m in Sources */,
 				5D08DE121BF9F6D100AD5503 /* ORBankDetailViewController.m in Sources */,
 				5DF021141BF53AFE008D371E /* ConverterLab.xcdatamodeld in Sources */,
+				5D5B40B21C009DB300A72310 /* VCFloatingActionButton.m in Sources */,
 				5DF021111BF539FD008D371E /* ORDatabaseModel.m in Sources */,
 				5D08DE1B1BFA1D0400AD5503 /* ORBankDescriptionCell.m in Sources */,
 				5DF019E21BF4927E008D371E /* main.m in Sources */,
