@@ -57,6 +57,7 @@
     [self customizeSearchBarButtonItem];
     [self customizeBackBarButtonItem];
     [self setTitle:@"Converter Lab"];
+    
 }
 
 #pragma mark -
@@ -108,7 +109,6 @@
     }];
 }
 
-
 -(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
     
     //[self performFetch];
@@ -116,7 +116,6 @@
         [self.tableView setTableHeaderView:nil];
         
     }completion:^(BOOL finished){
-        
     }];
     
 }

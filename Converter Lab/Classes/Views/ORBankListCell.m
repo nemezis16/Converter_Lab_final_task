@@ -27,9 +27,6 @@
     self.layer.shadowOpacity = 0.45;
     
     [self setupConstraints];
-    
-    
-    
 }
 
 -(void)setupConstraints{

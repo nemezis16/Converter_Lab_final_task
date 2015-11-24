@@ -15,10 +15,11 @@
         <attribute name="ask" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bid" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ORBank" inverseName="currency" inverseEntity="ORBank" syncable="YES"/>
     </entity>
     <elements>
         <element name="ORBank" positionX="0" positionY="0" width="128" height="180"/>
-        <element name="ORCurrency" positionX="0" positionY="0" width="128" height="103"/>
+        <element name="ORCurrency" positionX="0" positionY="0" width="128" height="120"/>
     </elements>
 </model>

@@ -6,29 +6,31 @@
 //  Copyright (c) 2015 Osadchuk. All rights reserved.
 //
 
+
 #import "ORBankDetailViewController.h"
 #import "ORBankDescriptionCell.h"
 #import "ORCurrencyDescriptionCell.h"
 #import "ORCurrencyListCell.h"
 #import "ORCurrency.h"
 #import "ORMapViewController.h"
+#import "ORShareDialogView.h"
 
 @interface ORBankDetailViewController ()
 
-@property (strong,nonatomic) NSArray * currencies;
-@property (strong,nonatomic) VCFloatingActionButton* floatingButton;
-
+@property (strong,nonatomic) NSArray *currencies;
+@property (strong,nonatomic) ORShareDialogView *shareWindow;
+@property (strong,nonatomic) ORFloatingButton *floatingButton;
 @end
 
 @implementation ORBankDetailViewController
 
 - (void)viewDidLoad{
-    
     [super viewDidLoad];
     
     self.currencies=[[self.bankSelected currency] allObjects];
+    self.tableView.delegate=self;
     
-    [self configFloatButton];
+    [self addFloatingButton];
     [self customizeTitle];
     [self customizeButtonBarShare];
 }
@@ -36,18 +38,19 @@
 #pragma mark - 
 #pragma mark style
 
--(void)configFloatButton {
+-(void)addFloatingButton {
     
-    CGRect floatFrame = CGRectMake([UIScreen mainScreen].bounds.size.width - 44 - 20, [UIScreen mainScreen].bounds.size.height - 44 - 20, 44, 44);
+    CGRect floatFrame = CGRectMake([UIScreen mainScreen].bounds.size.width - 64, [UIScreen mainScreen].bounds.size.height - 64, 44, 44);
     
-    self.floatingButton = [[VCFloatingActionButton alloc]initWithFrame:floatFrame normalImage:[UIImage imageNamed:@"ic_hamburger"] andPressedImage:[UIImage imageNamed:@"ic_close"] withScrollview:self.tableView];
+    self.floatingButton = [[ORFloatingButton alloc]initWithFrame:floatFrame defaultButtonImage:[UIImage imageNamed:@"ic_hamburger"] highlightedButtonImage:[UIImage imageNamed:@"ic_close"] view:self.view];
     
     self.floatingButton.delegate = self;
     
     [self.view addSubview:self.floatingButton];
-    self.floatingButton.imageArray = @[@"ic_phone_floating",@"ic_link_floating",@"ic_mark_floating"];
-    self.floatingButton.labelArray = @[@" Позвонить  ",@" Сайт  ",@" Карта  "];
+    self.floatingButton.imagesForMenuRowsArray = @[@"ic_phone_floating",@"ic_link_floating",@"ic_mark_floating"];
+    self.floatingButton.labelsForMenuRowsArray = @[@" Позвонить  ",@" Сайт  ",@" Карта  "];
 }
+
 
 -(void)customizeTitle {
     
@@ -100,11 +103,10 @@
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
     return 3;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     switch (section) {
         case 0:
@@ -118,7 +120,7 @@
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section==0 && indexPath.row==0) {
         ORBankDescriptionCell *bankDescriptionCell=[tableView dequeueReusableCellWithIdentifier:@"bankDetailCell" forIndexPath:indexPath];
@@ -151,15 +153,15 @@
 #pragma mark -
 #pragma mark - Table view data source optional methods
 
-- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 5.0f;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     return nil;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
         case 0:
             return 157.0f;
@@ -172,14 +174,10 @@
     }
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-        self.floatingButton.transform = CGAffineTransformMakeTranslation(0, scrollView.contentOffset.y);
-}
-
 #pragma mark -
 #pragma mark float button menu
 
--(void)didSelectMenuOptionAtIndex:(NSInteger)row{
+- (void)didSelectMenuOptionAtIndex:(NSInteger)row {
     switch (row) {
         case 0:
             [self goToPhone];
@@ -195,17 +193,16 @@
     }
 }
 
--(void)goToLink {
+- (void)goToLink {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.bankSelected.link]];
 }
 
--(void)goToPhone {
+- (void)goToPhone {
     NSString *phoneNumber = [@"tel:" stringByAppendingString:self.bankSelected.phone];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber]];
 }
 
--(void)goToMap {
-    
+- (void)goToMap {
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"  bundle: nil];
     ORMapViewController *controller = (ORMapViewController*)[mainStoryboard instantiateViewControllerWithIdentifier: @"mapViewController"];
     controller.bankSelected=self.bankSelected;
@@ -214,13 +211,68 @@
 
 
 #pragma mark -
-#pragma mark Share 
+#pragma mark share
 
 -(void)actionShare:(id) sender {
     
-    //in process
+    if (!self.shareWindow) {
+        CGRect frame = self.view.frame;
+        self.shareWindow = [[ORShareDialogView alloc]initWithFrame:CGRectMake(0,0,CGRectGetWidth(frame),CGRectGetHeight(frame))];
+        self.shareWindow.bank=self.bankSelected;
+        [self.shareWindow configureWindow];
+    }
     
+    [self.view addSubview:self.shareWindow];
+    [self addContraintsToShareWindow];
+    
+    [(UIButton *)sender setEnabled:NO];
+    
+    //if tapped out
+    self.shareWindow.completionBlock=^{
+        [(UIButton *)sender setEnabled:YES];
+    };
+    
+    __weak id selfObject=self;
+    //if tapped share
+    self.shareWindow.completionBlockWithEmail=^{
+        [(UIButton *)sender setEnabled:YES];
+        [selfObject sendEmail];
+    };
 }
+
+- (void)addContraintsToShareWindow {
+    
+    NSDictionary *shareWindow = @{@"shareWindow": self.shareWindow};
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[shareWindow]|" options:0 metrics:nil views:shareWindow]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[shareWindow]|" options:0 metrics:nil views:shareWindow]];
+    
+
+}
+
+-(void)sendEmail  {
+    
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController* controller = [[MFMailComposeViewController alloc] init];
+        controller.mailComposeDelegate = self;
+        [controller setSubject:self.bankSelected.title];
+        [controller setMessageBody:self.bankSelected.link isHTML:NO];
+        if (controller) [self presentViewController:controller animated:YES completion:NULL];
+        
+
+    } else {
+        NSLog(@"device couldn't send e-mail");
+    }
+   
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (result == MFMailComposeResultSent) {
+        NSLog(@"It's away!");
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 
 @end

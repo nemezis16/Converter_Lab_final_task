@@ -78,6 +78,7 @@
                 
                 //transform currency description
                 NSString *currencyDescription=NULL_TO_NIL( currencies[currencyID]);
+                currency.id=currencyID;
                 currency.currencyDescription=currencyDescription;
                 currency.bid=NULL_TO_NIL([currenciesInBank[currencyID] valueForKey :@"bid"]);
                 currency.ask=NULL_TO_NIL([currenciesInBank[currencyID] valueForKey: @"ask"]);

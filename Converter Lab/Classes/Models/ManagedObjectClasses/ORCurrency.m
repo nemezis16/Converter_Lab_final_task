@@ -14,6 +14,7 @@
 
 @dynamic ask;
 @dynamic bid;
+@dynamic id;
 @dynamic currencyDescription;
 @dynamic relationship;
 

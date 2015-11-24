@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ORBank.h"
-#import "VCFloatingActionButton.h"
+#import <MessageUI/MFMailComposeViewController.h>
+#import "ORFloatingButton.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface ORBankDetailViewController : UITableViewController<floatMenuDelegate>
+@interface ORBankDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate,floatMenuDelegate >
 
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)ORBank * bankSelected;
 
 @end
