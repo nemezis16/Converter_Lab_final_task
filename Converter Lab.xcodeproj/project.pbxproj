@@ -25,6 +25,7 @@
 		5D8A56EF1BF7D1ED00E8BDDC /* ORCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A56EE1BF7D1ED00E8BDDC /* ORCurrency.m */; };
 		5DABBC681C01E66800BCC429 /* Converter Lab-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DABBC671C01E66800BCC429 /* Converter Lab-Info.plist */; };
 		5DAF7B741C03030A00542036 /* ORShareDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF7B731C03030A00542036 /* ORShareDialogView.m */; };
+		5DB094D61C0716B300F9E999 /* ORUpdatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB094D51C0716B300F9E999 /* ORUpdatingView.m */; };
 		5DE50DF31BFFBC3700F42457 /* ORBankCellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE50DF21BFFBC3700F42457 /* ORBankCellButton.m */; };
 		5DF019D61BF4927E008D371E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D51BF4927E008D371E /* Foundation.framework */; };
 		5DF019D81BF4927E008D371E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF019D71BF4927E008D371E /* CoreGraphics.framework */; };
@@ -91,6 +92,8 @@
 		5DABBC671C01E66800BCC429 /* Converter Lab-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Converter Lab-Info.plist"; sourceTree = "<group>"; };
 		5DAF7B721C03030A00542036 /* ORShareDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORShareDialogView.h; path = Classes/Views/ORShareDialogView.h; sourceTree = "<group>"; };
 		5DAF7B731C03030A00542036 /* ORShareDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORShareDialogView.m; path = Classes/Views/ORShareDialogView.m; sourceTree = "<group>"; };
+		5DB094D41C0716B300F9E999 /* ORUpdatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORUpdatingView.h; path = Classes/Views/ORUpdatingView.h; sourceTree = "<group>"; };
+		5DB094D51C0716B300F9E999 /* ORUpdatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORUpdatingView.m; path = Classes/Views/ORUpdatingView.m; sourceTree = "<group>"; };
 		5DE50DF11BFFBC3700F42457 /* ORBankCellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORBankCellButton.h; path = Classes/Views/ORBankCellButton.h; sourceTree = "<group>"; };
 		5DE50DF21BFFBC3700F42457 /* ORBankCellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORBankCellButton.m; path = Classes/Views/ORBankCellButton.m; sourceTree = "<group>"; };
 		5DF019D21BF4927E008D371E /* Converter Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Converter Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +261,8 @@
 				5D08DE171BFA1CA300AD5503 /* CurrencyDescriptionCell */,
 				5D08DE161BFA1C8D00AD5503 /* BankDescriptionCell */,
 				5D08DE0B1BF9F65700AD5503 /* BankListCell */,
+				5DB094D41C0716B300F9E999 /* ORUpdatingView.h */,
+				5DB094D51C0716B300F9E999 /* ORUpdatingView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				5DF01A0F1BF49C7A008D371E /* ORBankListViewController.m in Sources */,
 				5D8459E31BF5F17400987B63 /* ORDataManager.m in Sources */,
 				5D2B50C81BFE3D4F0051B839 /* UIView+UITableView.m in Sources */,
+				5DB094D61C0716B300F9E999 /* ORUpdatingView.m in Sources */,
 				5D8459E61BF5F19200987B63 /* ORDataBuilder.m in Sources */,
 				5D08DE1E1BFA1D1C00AD5503 /* ORCurrencyDescriptionCell.m in Sources */,
 				5D8459D81BF5E36900987B63 /* ORBank.m in Sources */,

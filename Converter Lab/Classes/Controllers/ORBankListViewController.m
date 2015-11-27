@@ -20,6 +20,7 @@
 
 #import "UIView+UITableView.h"
 #import "UIView+UITableViewCell.h"
+#import "ORUpdatingView.h"
 
 @interface ORBankListViewController ()<ORDataManagerDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UISearchDisplayDelegate>
 
@@ -30,12 +31,15 @@
 @property (strong, nonatomic) NSFetchRequest *searchFetchRequest;
 @property (strong, nonatomic) NSArray *filteredList;
 @property (strong, nonatomic) UIView *shadowButton;
+@property (strong,nonatomic) ORUpdatingView *updatingView;
+@property (strong,nonatomic) UISearchBar *searchBar;
 
 @end
 
 @implementation ORBankListViewController
 
 - (void)viewDidLoad  {
+    
     [super viewDidLoad];
     
     [self performFetch];
@@ -45,25 +49,32 @@
     [self.dataManager fetchData];
     
     
-    UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-    [searchBar sizeToFit];
-    [self setSearchController:[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self]];
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
+    [self.searchBar sizeToFit];
+    [self setSearchController:[[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self]];
     [self.searchController setSearchResultsDataSource:self];
     [self.searchController setSearchResultsDelegate:self];
     [self.searchController setDelegate:self];
-    [searchBar setDelegate:self];
+    [self.searchBar setDelegate:self];
     
-  
+    [self addUpdatingView];
     [self customizeSearchBarButtonItem];
     [self customizeBackBarButtonItem];
     [self setTitle:@"Converter Lab"];
-    
 }
 
 #pragma mark -
 #pragma mark style
 
--(void)setTitle:(NSString *)title {
+- (void)addUpdatingView {
+    self.updatingView = [[ORUpdatingView alloc]initWithFrame:CGRectZero];
+    [self.navigationController.view addSubview:self.updatingView];
+    [self.updatingView addConstraintsToUpdatingView];
+}
+
+
+
+- (void)setTitle:(NSString *)title {
     [super setTitle:title];
     UIColor *textColor=[UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0];
     [self.navigationController.navigationBar setTitleTextAttributes:
@@ -85,53 +96,39 @@
 }
 
 -(void)customizeBackBarButtonItem {
-    
     UIImage *backBtn = [UIImage imageNamed:@"ic_back"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationController.navigationBar.backIndicatorTransitionMaskImage = backBtn;
     self.navigationController.navigationBar.backIndicatorImage=backBtn;
-
 }
+
 
 #pragma mark -
 #pragma mark Searching methods
 
 -(void)actionSearch:(id)sender{
+    
     [(UIButton *)sender setEnabled:NO];
     [self.searchController setActive:NO];
     
     [UIView animateWithDuration:0.3 animations:^{
-        [self.tableView setTableHeaderView:self.searchController.searchBar];
+        [self.tableView setTableHeaderView:self.searchBar];
         [self.searchController.searchBar becomeFirstResponder];
     }completion:^(BOOL finished){
         [(UIButton *)sender setEnabled:YES];
         [self.searchController setActive:YES];
     }];
+    
 }
 
 -(void)searchDisplayControllerWillEndSearch:(UISearchDisplayController *)controller{
-    
-    //[self performFetch];
-    [UIView animateWithDuration:0.3 animations:^{
-        [self.tableView setTableHeaderView:nil];
-        
-    }completion:^(BOOL finished){
-    }];
-    
+    [self.tableView setTableHeaderView:nil];
 }
 
-- (void)searchForText:(NSString *)searchText scope:(NSString *)scope
-{
-    
+- (void)searchForText:(NSString *)searchText scope:(NSString *)scope {
     ORDatabaseModel *dataBaseModel=[ORDatabaseModel getClassInstance];
     
-    if (dataBaseModel.managedObjectContext)
-    {
-        
-        NSFetchRequest *fetchRequest=[[NSFetchRequest alloc]initWithEntityName:@"ORBank"];
-        
-        [fetchRequest setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
-        
+    if (dataBaseModel.managedObjectContext){
         NSPredicate *predicateTitle = [NSPredicate predicateWithFormat:@"title BEGINSWITH[cd] %@", searchText];
         NSPredicate *predicateCity = [NSPredicate predicateWithFormat:@"city BEGINSWITH[cd] %@", searchText];
         NSPredicate *predicateAddres = [NSPredicate predicateWithFormat:@"address BEGINSWITH[cd] %@", searchText];
@@ -174,8 +171,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ORBank* bank=nil;
-    ORBankListCell *cell=nil;
+    ORBank* bank;
+    ORBankListCell *cell;
     
     if (tableView == self.tableView)
     {
@@ -258,9 +255,11 @@
 
 -(void)dataDidUpdate {
     NSLog(@"update success");
+    [self.updatingView removeFromSuperview];
 }
 
 -(void)dataDidFailWithError:(NSError *)error {
+    [self.updatingView removeFromSuperview];
     UIAlertView* alertView=[[UIAlertView alloc]initWithTitle:@"Ошибка" message:@"Нельзя обновить данные :[\n Пожалуйста, проверьте соединение" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
 }
@@ -320,8 +319,8 @@
     }
 }
 
-- (NSFetchRequest *)searchFetchRequest
-{
+- (NSFetchRequest *)searchFetchRequest {
+    
     if (_searchFetchRequest != nil)
     {
         return _searchFetchRequest;
